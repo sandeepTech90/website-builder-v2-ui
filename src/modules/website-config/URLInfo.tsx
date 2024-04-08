@@ -1,9 +1,21 @@
 import { ExternalLink } from "lucide-react";
-import Card from "./ui/Card";
-import Checkbox from "./ui/Checkbox";
-import FormLabel from "./ui/FormLabel";
+import Card from "../../components/ui/Card";
+import Radio from "../../components/ui/Radio";
+import FormLabel from "../../components/ui/FormLabel";
 
-const URLInfo = () => {
+type URLInfoProps = {
+  websiteUrl: string;
+  theme: "marron" | "aqua" | "yellow";
+};
+
+const COLORS = [
+  { id: "aqua", color: "#00ffff", label: "Aqua" },
+  { id: "maroon", color: "#800000", label: "Maroon", textColor: "white" },
+  { id: "yellow", color: "#ffff00", label: "Yellow" },
+];
+
+const URLInfo = (props: URLInfoProps) => {
+  const { websiteUrl, theme } = props;
   return (
     <Card title="Website URL & Theme" onSave={() => {}}>
       <div className="px-3 py-8">
@@ -11,7 +23,12 @@ const URLInfo = () => {
           <div className="flex flex-col">
             <FormLabel text="Website URL" />
             <div className="flex gap-2 justify-center items-center">
-              <input type="text" className="h-12 flex-1" />
+              <input
+                type="text"
+                className="h-12 flex-1"
+                value={websiteUrl}
+                onChange={() => console.log()}
+              />
               <ExternalLink className="h-12 w-12 text-primary" />
             </div>
             <div className="text-xs italic mt-2 ml-2">
@@ -31,14 +48,17 @@ const URLInfo = () => {
           <div className="flex flex-col">
             <FormLabel text="Theme" />
             <div className="flex gap-x-12 gap-y-4 flex-wrap">
-              <Checkbox label="Aqua" value="aqua" color="#00ffff" />
-              <Checkbox
-                label="Maroon"
-                value="maroon"
-                color="#800000"
-                textColor="white"
-              />
-              <Checkbox label="Yellow" value="yellow" color="#ffff00" />
+              {COLORS.map((c) => (
+                <Radio
+                  key={c.id}
+                  label={c.label}
+                  value={c.id}
+                  color={c.color}
+                  textColor={c.textColor}
+                  onChange={() => console.log("")}
+                  selected={c.id === theme}
+                />
+              ))}
             </div>
           </div>
         </form>

@@ -11,11 +11,11 @@ const Card = (props: CardProps) => {
 
   return (
     <div className="border rounded-md">
-      <div className="w-full bg-slate-50 rounded-t-md py-2 px-3 flex justify-between items-center">
+      <div className="w-full bg-slate-50 rounded-t-md py-2 px-3 flex justify-between items-center border-b">
         <p>{title}</p>
         <button className="text-xs">Save</button>
       </div>
-      {children}
+      <div className="bg-white">{children}</div>
     </div>
   );
 };

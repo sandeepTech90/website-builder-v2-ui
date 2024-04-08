@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
-import Card from "./ui/Card";
-import FormInput from "./ui/FormInput";
-import FormLabel from "./ui/FormLabel";
+import Card from "../../components/ui/Card";
+import FormInput from "../../components/ui/FormInput";
+import FormLabel from "../../components/ui/FormLabel";
 
 const ContactSocial = () => {
   return (

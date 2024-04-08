@@ -1,16 +1,24 @@
-type CheckboxProps = {
+type RadioProps = {
   label: string | number | boolean;
   value: string;
   color?: string;
   textColor?: string;
+  selected: boolean;
+  onChange: () => void;
 };
 
-const Checkbox = (props: CheckboxProps) => {
-  const { label, value, color, textColor } = props;
+const Radio = (props: RadioProps) => {
+  const { label, value, color, textColor, onChange, selected } = props;
 
   return (
     <div className="flex text-sm gap-2">
-      <input type="radio" name="theme" value={value} />
+      <input
+        type="radio"
+        name="theme"
+        value={value}
+        onChange={onChange}
+        checked={selected}
+      />
       <div
         className="py-1 px-2 rounded-md flex items-center justify-center w-[5rem]"
         style={{ backgroundColor: color, color: textColor }}
@@ -21,4 +29,4 @@ const Checkbox = (props: CheckboxProps) => {
   );
 };
 
-export default Checkbox;
+export default Radio;

@@ -1,4 +1,4 @@
-import { Cross, Edit, X } from "lucide-react";
+import { Edit, X } from "lucide-react";
 import FormLabel from "./FormLabel";
 
 type CustomImgProps = {

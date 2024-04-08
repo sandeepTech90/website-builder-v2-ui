@@ -1,7 +1,5 @@
 import { DndContext } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
-import SortableItem from "./SortableItem";
-import CustomImage from "./ui/CustomImage";
 import { ReactNode } from "react";
 
 type SortableItemsProps = {

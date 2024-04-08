@@ -1,6 +1,6 @@
-import Card from "./ui/Card";
-import CustomImage from "./ui/CustomImage";
-import FormLabel from "./ui/FormLabel";
+import Card from "../../components/ui/Card";
+import CustomImage from "../../components/ui/CustomImage";
+import FormLabel from "../../components/ui/FormLabel";
 import { useState } from "react";
 import SortableItems from "./SortableItems";
 import SortableItem from "./SortableItem";
@@ -40,7 +40,6 @@ const Photos = () => {
                 {photos.map((el) => (
                   <SortableItem id={el} key={el}>
                     <CustomImage
-                      title={el}
                       canDelete
                       url="https://s3.ap-south-1.amazonaws.com/buzz.hotel-images/nishant-test-hotel-cover.png?_cache=1623252818"
                     />
@@ -60,7 +59,6 @@ const Photos = () => {
                 {gallery.map((el) => (
                   <SortableItem id={el} key={el}>
                     <CustomImage
-                      title={el}
                       canDelete
                       checkboxEnabled
                       radioEnabled

@@ -1,6 +1,6 @@
-import Card from "./ui/Card";
-import FormLabel from "./ui/FormLabel";
-import FormInput from "./ui/FormInput";
+import Card from "../../components/ui/Card";
+import FormLabel from "../../components/ui/FormLabel";
+import FormInput from "../../components/ui/FormInput";
 
 const NameAddress = () => {
   return (
